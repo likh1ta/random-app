@@ -52,4 +52,8 @@ async def get_history(user_email: str):
         return{"User not found"}
 
     user_history = list(user_collection.find())
+    if len(user_history)<=1:
+     return{"No history"}
+
+    user_history = user_history[1:]
     return {"user_email": user_email, "history": history_list_serial(user_history)}
