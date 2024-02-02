@@ -4,6 +4,7 @@ import random
 class Choice(BaseModel):
    category:str
    items:List[str]
+   tags:List[str]
    
    @property
    def selected_item(self) -> str:
